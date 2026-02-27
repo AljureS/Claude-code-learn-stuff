@@ -1,0 +1,83 @@
+@import "../../styles/vars.scss";
+
+.starRating {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.stars {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.star {
+  background: none;
+  border: none;
+  font-size: 2rem;
+  color: color("text-secondary");
+  cursor: pointer;
+  transition: transform 0.2s ease;
+  padding: 0;
+  line-height: 1;
+
+  &:hover:not(:disabled) {
+    transform: scale(1.1);
+  }
+
+  &.filled {
+    color: color("primary");
+  }
+
+  &:disabled {
+    cursor: not-allowed;
+    opacity: 0.6;
+  }
+
+  &:focus-visible {
+    outline: 2px solid color("primary");
+    outline-offset: 2px;
+    border-radius: 2px;
+  }
+}
+
+.info {
+  display: flex;
+  align-items: baseline;
+  gap: 0.5rem;
+  font-size: 0.875rem;
+}
+
+.average {
+  font-weight: 600;
+  color: color("text-primary");
+  font-size: 1rem;
+}
+
+.noRatings {
+  color: color("text-secondary");
+  font-style: italic;
+  opacity: 0.7;
+}
+
+.total {
+  color: color("text-secondary");
+  opacity: 0.7;
+}
+
+// Responsive adjustments for mobile
+@media (max-width: 768px) {
+  .star {
+    font-size: 1.5rem;
+    // Ensure minimum touch target size (44x44px)
+    min-width: 44px;
+    min-height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .stars {
+    gap: 0.25rem;
+  }
+}

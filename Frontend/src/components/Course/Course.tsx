@@ -21,8 +21,9 @@ function renderStars(rating: number) {
         </span>
       ))}
       {hasHalfStar && (
-        <span key="half" aria-hidden="true">
-          ½
+        <span key="half" className={styles.halfStar} aria-hidden="true">
+          <span className={styles.halfStarEmpty}>☆</span>
+          <span className={styles.halfStarFilled}>★</span>
         </span>
       )}
       {[...Array(emptyStars)].map((_, i) => (

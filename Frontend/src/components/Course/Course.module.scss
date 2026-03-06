@@ -69,6 +69,25 @@
   line-height: 1;
 }
 
+.halfStar {
+  display: inline-block;
+  position: relative;
+  width: 1em;
+}
+
+.halfStarEmpty {
+  color: color('text-secondary');
+  opacity: 0.3;
+}
+
+.halfStarFilled {
+  position: absolute;
+  left: 0;
+  top: 0;
+  overflow: hidden;
+  width: 50%;
+}
+
 .ratingText {
   color: color('text-secondary');
   font-size: 0.95rem;
